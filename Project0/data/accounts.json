@@ -1,0 +1,9 @@
+{
+    "accounts": [
+        {
+            "accountNumber": 123,
+            "routingNumber": 456,
+            "balance": 0
+        }
+    ]
+}
