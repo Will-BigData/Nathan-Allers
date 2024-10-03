@@ -1,7 +1,7 @@
-from DAO.account_DAO import AccountDAO
+from DAO.account_dao import AccountDAO
 
 class AccountService:
-    def __init__(self, accounts_file_path: str):
-        self.account_DAO: AccountDAO = AccountDAO(accounts_file_path)
+    def __init__(self, account_DAO):
+        self.account_DAO: AccountDAO = account_DAO
     def get_account_by_number(self, account_number: int):
         return self.account_DAO.get_account_by_number(account_number)
