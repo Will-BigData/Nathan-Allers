@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, request
 from service.account_service import AccountService
 from config.config_manager import ConfigManager
 from DAO.account_dao_factory import AccountDAOFactory
@@ -16,6 +16,10 @@ def get_account_by_number(account_number: str):
     if account is not None:
         return vars(account)
     return '', 404
+
+@app.post("/accounts")
+def add_new_account():
+    account = request.get_json()
 
 if __name__ == "__main__":
     app.run()
