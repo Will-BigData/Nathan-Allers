@@ -1,7 +1,7 @@
 from flask import Flask, request
-from service.account_service import AccountService
-from config.config_manager import ConfigManager
-from DAO.account_dao_factory import AccountDAOFactory
+from backend.service import AccountService
+from backend.config import ConfigManager
+from backend.DAO.account_dao_factory import AccountDAOFactory
 
 app: Flask = Flask(__name__)
 account_service = AccountService(AccountDAOFactory.get_dao_by_type(ConfigManager().get_config("account_dao_type")))

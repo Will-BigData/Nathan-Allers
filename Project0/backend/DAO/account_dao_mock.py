@@ -1,5 +1,5 @@
 from .account_dao import AccountDAO
-from model.account import Account
+from common.model import Account
 
 class AccountDAOMock(AccountDAO):
     def __init__(self):

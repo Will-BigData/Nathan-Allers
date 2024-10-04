@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-from model.account import Account
+from common.model import Account
 
 class AccountDAO(ABC):
     @abstractmethod

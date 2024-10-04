@@ -1,6 +1,6 @@
 import json
 from .account_dao import AccountDAO
-from model.account import Account
+from common.model import Account
 
 class AccountDAO_JSON(AccountDAO):
     def __init__(self, accounts_file_path: str):

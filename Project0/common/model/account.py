@@ -1,8 +1,8 @@
 class Account:
-    def __init__(self, account_number, routing_number, balance):
-        self._account_number = account_number
-        self._routing_number = routing_number
-        self._balance = balance
+    def __init__(self, _account_number, _routing_number, _balance):
+        self._account_number = _account_number
+        self._routing_number = _routing_number
+        self._balance = _balance
 
     def get_account_number(self) -> int:
         return self._account_number
@@ -28,11 +28,11 @@ class Account:
     def deposit(self, amount: int) -> bool:
         if isinstance(amount, int):
             if amount > 0:
-                self.balance += amount
+                self._balance += amount
                 return True
         return False
     
     def __str__(self):
-        return f"Account Number: {self.account_number}\nRouting Number: {self.routing_number}\nBalance: ${self.balance}"
+        return f"Account Number: {self._account_number}\nRouting Number: {self._routing_number}\nBalance: ${self._balance}"
     
     

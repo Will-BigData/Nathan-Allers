@@ -1,4 +1,4 @@
-from DAO.account_dao import AccountDAO
+from backend.DAO.account_dao import AccountDAO
 
 class AccountService:
     def __init__(self, account_DAO):

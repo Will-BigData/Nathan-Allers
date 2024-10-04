@@ -1,6 +1,6 @@
 from .account_dao_json import AccountDAO_JSON
 from .account_dao_mock import AccountDAOMock
-from config.config_manager import ConfigManager
+from backend.config import ConfigManager
 from .account_dao import AccountDAO
 
 class AccountDAOFactory:
