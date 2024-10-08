@@ -1,7 +1,7 @@
 from flask import Flask, request
 from backend.service import AccountService
 from backend.config import ConfigManager
-from backend.DAO.account_dao_factory import AccountDAOFactory
+from backend.DAO import AccountDAOFactory
 from common.model import Account
 
 app: Flask = Flask(__name__)
@@ -16,7 +16,7 @@ def get_account_by_number(account_number: str):
     account = account_service.get_account_by_number(int(account_number))
     if account is not None:
         return vars(account)
-    return '', 404
+    return "No account exists with account number " + account_number, 404
 
 @app.get("/accounts")
 def get_all_accounts():
@@ -26,7 +26,8 @@ def get_all_accounts():
 @app.post("/accounts")
 def add_new_account():
     account = Account(**request.get_json())
-    account_service.insert_account(account)
+    if not account_service.insert_account(account):
+        return "Account number already exists", 400
     return "Account added"
 
 if __name__ == "__main__":

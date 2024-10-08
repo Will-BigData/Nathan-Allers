@@ -6,7 +6,10 @@ class AccountService:
         self.account_DAO: AccountDAO = account_DAO
     def get_account_by_number(self, account_number: int):
         return self.account_DAO.get_account_by_number(account_number)
-    def insert_account(self, account: Account):
-        self.account_DAO.insert_account(account)
+    def insert_account(self, account: Account) -> bool:
+        if self.account_DAO.get_account_by_number(account.get_account_number()) is None:
+            self.account_DAO.insert_account(account)
+            return True
+        return False
     def get_all_accounts(self):
         return self.account_DAO.get_all_accounts()
