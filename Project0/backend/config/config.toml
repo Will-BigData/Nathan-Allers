@@ -1,2 +1,2 @@
 account_dao_type = "mock"
-accounts_json_file = "data/accounts.json"
+accounts_json_file = "backend/data/accounts.json"

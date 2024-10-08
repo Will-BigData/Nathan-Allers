@@ -9,3 +9,7 @@ class AccountDAO(ABC):
     @abstractmethod
     def get_all_accounts(self) -> list:
         pass
+
+    @abstractmethod
+    def insert_account(self, account: Account):
+        pass

@@ -14,3 +14,6 @@ class AccountDAOMock(AccountDAO):
         return None
     def get_all_accounts(self) -> list:
         return self.accounts[:]
+    
+    def insert_account(self, account: Account):
+        self.accounts.append(account)
