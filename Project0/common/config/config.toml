@@ -1,3 +1,12 @@
 [backend]
-account_dao_type = "mock"
-accounts_json_file = "backend/data/accounts.json"
+account_dao_type = "db"
+accounts_json_file = "./backend/data/accounts.json"
+
+[backend.database]
+dialect = "mysql"
+driver = "pymysql"
+username_env_var = "DB_USERNAME"
+password_env_var = "DB_PASSWORD"
+host = "localhost"
+port = "3306"
+name = "project0"

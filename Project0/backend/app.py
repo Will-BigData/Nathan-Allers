@@ -5,7 +5,7 @@ from backend.DAO import AccountDAOFactory
 from common.model import Account
 
 app: Flask = Flask(__name__)
-account_service = AccountService(AccountDAOFactory.get_dao_by_type(ConfigManager().get_config("backend")["account_dao_type"]))
+account_service = AccountService(AccountDAOFactory.get_dao_by_type(ConfigManager.get_config("backend", "account_dao_type")))
 
 @app.get("/")
 def index():
