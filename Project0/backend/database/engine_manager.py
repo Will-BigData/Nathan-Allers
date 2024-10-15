@@ -1,9 +1,12 @@
+import os
 from sqlalchemy import create_engine, URL
 from common.config import ConfigManager
-import os
+from common.util import handle_with_message
 
 class EngineManager:
     _engine = None
+
+    @handle_with_message(KeyError, "[ERROR] Database config invalid")
     def get_engine():
         if EngineManager._engine is None:
             db_config = ConfigManager.get_config("backend", "database")

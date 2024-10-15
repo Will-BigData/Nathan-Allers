@@ -4,8 +4,10 @@ from .account_dao_db import AccountDAO_DB
 from backend.database import EngineManager
 from common.config import ConfigManager
 from .account_dao import AccountDAO
+from common.util import handle_with_message
 
 class AccountDAOFactory:
+    @handle_with_message(OSError, "[ERROR] Loading JSON DAO failed")
     def get_json_dao() -> AccountDAO:
         return AccountDAO_JSON(ConfigManager.get_config("backend", "accounts_json_file"))
     def get_mock_dao() -> AccountDAO:

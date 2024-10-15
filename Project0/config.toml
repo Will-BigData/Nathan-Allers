@@ -1,0 +1,16 @@
+[backend]
+account_dao_type = "db" # Options: "mock", "json", "db"
+accounts_json_file = "./backend/data/accounts.json"
+
+[backend.database]
+dialect = "mysql"
+driver = "pymysql"
+username_env_var = "AWS_DB_USERNAME"
+password_env_var = "AWS_DB_PASSWORD"
+host = "database-1.cjswawaqoynp.us-east-1.rds.amazonaws.com"
+port = "3306"
+name = "project0"
+
+[frontend]
+server_host = "localhost"
+server_port = "5000"
