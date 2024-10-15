@@ -37,7 +37,7 @@ def update_account_by_number(account_number: str):
     return unknown_account_view(account_number)
 
 @app.get("/accounts")
-#@handle_generic_error
+@handle_generic_error
 def get_all_accounts():
     accounts = account_service.get_all_accounts()
     return list(map(vars, accounts))
